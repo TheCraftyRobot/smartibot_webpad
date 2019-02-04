@@ -1,0 +1,65 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name=apple-mobile-web-app-status-bar-style content="black">
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="webapp_manifest.json">
+</head>
+
+<style>
+.btn-groupV .button {
+  background-color: #321339; 
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+  cursor: pointer;
+  width: 100%;
+  height: 33%;
+  display: block;
+}
+
+.btn-groupH .button {
+  background-color: #321339;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 50%;
+  height: 33%;
+  font-size: 16px;
+  cursor: pointer;
+  float: left;
+}
+
+
+.button:hover {background-color: #6D2475}
+
+.button:active {
+  background-color: #19ADE5;
+}
+
+</style>
+
+<body>
+<script src="js/puck.js"></script>
+<div class="btn-groupV">
+  <button class="button" onmousedown="Puck.write('digitalWrite(D4, 0);\n analogWrite(D6, 0.65);\n digitalWrite(D11, 0);\n analogWrite(D10, 0.65);\n');" onmouseup="Puck.write('digitalWrite(D6, 0);\n digitalWrite(D4, 0);\n digitalWrite(D10, 0);\n digitalWrite(D11, 0);\n');" ><img height="50%" src="img/up.svg"/></button>
+  </div>
+  <div class="btn-groupH">
+  <button class="button" onmousedown="Puck.write('digitalWrite(D4, 0);\n analogWrite(D6, 0.65);\n digitalWrite(D10, 0);\n analogWrite(D11, 0.65);\n');" onmouseup="Puck.write('digitalWrite(D6, 0);\n digitalWrite(D4, 0);\n digitalWrite(D10, 0);\n digitalWrite(D11, 0);\n');" ><img height="50%" src="img/left.svg"/></button>
+  <button class="button" onmousedown="Puck.write('digitalWrite(D6, 0);\n analogWrite(D4, 0.65);\n digitalWrite(D11, 0);\n analogWrite(D10, 0.65);\n');" onmouseup="Puck.write('digitalWrite(D6, 0);\n digitalWrite(D4, 0);\n digitalWrite(D10, 0);\n digitalWrite(D11, 0);\n');" ><img height="50%" src="img/right.svg"/></button>
+</div>
+<div class="btn-groupV">
+  <button class="button" onmousedown="Puck.write('digitalWrite(D6, 0);\n analogWrite(D4, 0.65);\n digitalWrite(D10, 0);\n analogWrite(D11, 0.65);\n');" onmouseup="Puck.write('digitalWrite(D6, 0);\n digitalWrite(D4, 0);\n digitalWrite(D10, 0);\n digitalWrite(D11, 0);\n');" ><img height="50%" src="img/down.svg"/></button>
+</div>
+
+</body>
+</html>
